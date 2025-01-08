@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友情链接 - Shiping Liu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Shiping Liu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="people">
+            <h2>人物</h2>
+            <ul>
+                <li><a href="https://people.ucas.edu.cn/~shiping" target="_blank">中国科学院大学个人主页</a></li>
+                <li><a href="https://scholar.google.com.hk/citations?hl=en&user=W-S1wOUAAAAJ" target="_blank">Google Scholar</a></li>
+            </ul>
+        </section>
+
+        <section id="data-resources">
+            <h2>数据资源</h2>
+            <ul>
+                <li><a href="https://www.ncbi.nlm.nih.gov/" target="_blank">NCBI</a></li>
+                <li><a href="https://www.ebi.ac.uk/" target="_blank">EBI</a></li>
+                <li><a href="https://www.genome.gov/" target="_blank">NHGRI</a></li>
+            </ul>
+        </section>
+
+        <section id="software">
+            <h2>软件</h2>
+            <ul>
+                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                <li><a href="https://sourceforge.net/" target="_blank">SourceForge</a></li>
+                <li><a href="https://bioconductor.org/" target="_blank">Bioconductor</a></li>
+            </ul>
+        </section>
+
+        <section id="courses">
+            <h2>课程</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
+                <li><a href="https://www.edx.org/" target="_blank">edX</a></li>
+                <li><a href="https://ocw.mit.edu/" target="_blank">MIT OpenCourseWare</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
+        <p>Created by the help of Deepseek.</p>
+        <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 10px;">
+            Page views: <span id="visitCount">0</span>
+        </p>
+    </footer>
+    <script>
+        // Visit counter
+        if (localStorage.getItem('visitCount')) {
+            let count = parseInt(localStorage.getItem('visitCount')) + 1;
+            localStorage.setItem('visitCount', count);
+            document.getElementById('visitCount').textContent = count;
+        } else {
+            localStorage.setItem('visitCount', 1);
+            document.getElementById('visitCount').textContent = 1;
+        }
+    </script>
+    <script src="scripts/nav.js"></script>
+</body>
+</html>
