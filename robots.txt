@@ -3,4 +3,4 @@ Allow: /
 Disallow: /private/
 Disallow: /tmp/
 
-Sitemap: https://www.shipingliu.com/sitemap.xml
+Sitemap: https://shiping.github.io/sitemap.xml
