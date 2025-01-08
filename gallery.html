@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Shiping Liu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
     <header>
@@ -22,16 +23,38 @@
     <main>
         <section id="gallery">
             <h2>Gallery</h2>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="images/team.jpg" alt="Research Team">
-                    <p class="caption">Our Research Team (2024)</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/team.jpg" alt="Research Team">
+                        <p class="caption">BGI Center Shenzhen</Center></p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/back01.jpg" alt="Hangzhou landscape">
+                        <p class="caption">Hangzhou landscape</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/lab.jpg" alt="Laboratory">
+                        <p class="caption">Complex System</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/two.JPG" alt="Sisters">
+                        <p class="caption">Sisters</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/nancy.jpg" alt="Nancy">
+                        <p class="caption">Nancy</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/sunny.jpg" alt="Sunny">
+                        <p class="caption">Sunny</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/lab.jpg" alt="Laboratory">
-                    <p class="caption">Our Laboratory</p>
-                </div>
-                <!-- Add more gallery items here -->
+                <!-- Add navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!-- Add pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
     </main>
@@ -40,5 +63,32 @@
         <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
         <p>Created by the help of Deepseek.</p>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate: ['-120%', 0, -500],
+                },
+                next: {
+                    shadow: true,
+                    translate: ['120%', 0, -500],
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+    <script src="scripts/nav.js"></script>
 </body>
 </html>
