@@ -346,6 +346,10 @@ h3 {
     .solar .month-day {
         font-size: 0.9rem;
     }
+    
+    .calendar {
+        display: none;
+    }
 }
 
 /* Footer Styles */
