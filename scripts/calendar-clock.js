@@ -23,15 +23,17 @@ class CalendarClock {
                         <span class="year"></span>
                         <span class="month-day"></span>
                     </div>
-                    <div class="lunar">
-                        <span class="lunar-date"></span>
+                    <div class="holiday-info"></div>
+                    <div class="historical-events">
+                        <h4>On This Day in History</h4>
+                        <ul></ul>
                     </div>
                 </div>
             </div>
         `;
     }
 
-    update() {
+    async update() {
         const now = new Date();
         const solarDate = this.getSolarDate(now);
         const lunarDate = this.getLunarDate(now);
@@ -42,13 +44,83 @@ class CalendarClock {
             
         // 更新公历
         this.container.querySelector('.year').textContent = 
-            `${solarDate.year}年`;
+            `${solarDate.year}`;
         this.container.querySelector('.month-day').textContent = 
-            `${solarDate.month}月${solarDate.day}日`;
+            `${solarDate.month}/${solarDate.day}`;
             
-        // 更新农历
+        // Update lunar calendar
         this.container.querySelector('.lunar-date').textContent = 
-            `${lunarDate.year}年 ${lunarDate.month}${lunarDate.day}`;
+            `${lunarDate.year} ${lunarDate.month} ${lunarDate.day}`;
+
+        // 更新节假日信息
+        await this.updateHolidayInfo(solarDate);
+        
+        // 更新历史事件
+        await this.updateHistoricalEvents(solarDate);
+    }
+
+    async updateHolidayInfo(date) {
+        try {
+            const holiday = await this.fetchHolidayInfo(date);
+            const holidayElement = this.container.querySelector('.holiday-info');
+            if (holiday) {
+                holidayElement.textContent = holiday;
+                holidayElement.style.display = 'block';
+            } else {
+                holidayElement.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Failed to fetch holiday info:', error);
+        }
+    }
+
+    async updateHistoricalEvents(date) {
+        try {
+            const events = await this.fetchHistoricalEvents(date);
+            const eventsList = this.container.querySelector('.historical-events ul');
+            eventsList.innerHTML = events
+                .map((event, i) => `<li style="--i: ${i}">${event.year}: ${event.description}</li>`)
+                .join('');
+        } catch (error) {
+            console.error('Failed to fetch historical events:', error);
+        }
+    }
+
+    async fetchHolidayInfo(date) {
+        const month = date.month.toString().padStart(2, '0');
+        const day = date.day.toString().padStart(2, '0');
+        const url = `https://timor.tech/api/holiday/info/${date.year}-${month}-${day}`;
+        
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        if (data.type && data.type.type === 1) {
+            return data.type.name;
+        }
+        return null;
+    }
+
+    async fetchHistoricalEvents(date) {
+        const month = date.month.toString().padStart(2, '0');
+        const day = date.day.toString().padStart(2, '0');
+        const url = `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/${month}/${day}`;
+        
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        // Combine events from different categories
+        const events = [
+            ...(data.selected || []),
+            ...(data.births || []),
+            ...(data.deaths || []),
+            ...(data.events || [])
+        ].map(event => ({
+            year: event.year,
+            description: event.text
+        }));
+        
+        // Return only the first 5 events to avoid overwhelming the UI
+        return events.slice(0, 5);
     }
 
     formatTime(date) {
