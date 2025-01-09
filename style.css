@@ -212,30 +212,22 @@ h3 {
 }
 
 /* Calendar Clock Styles */
-.calendar-clock-container {
+.clock-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     max-width: 200px;
-    width: auto;
-    min-width: 150px;
-}
-
-.calendar-clock {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: #2c3e50;
 }
 
 .clock {
     text-align: center;
+    color: #2c3e50;
 }
 
 .clock .time {
@@ -250,85 +242,24 @@ h3 {
     color: #666;
 }
 
-.calendar {
-    text-align: center;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-}
-
-.solar {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.solar .year {
-    font-size: 0.9rem;
-    color: #666;
-    display: block;
-    margin-bottom: 3px;
-}
-
-.solar .month-day {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.holiday-info {
-    font-size: 0.9rem;
-    color: #e74c3c;
-    margin: 8px 0;
-    padding: 5px;
-    background: rgba(231, 76, 60, 0.1);
-    border-radius: 4px;
-}
-
-.historical-events {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px dashed #ddd;
-}
-
-.historical-events h4 {
-    font-size: 0.9rem;
-    color: #2c3e50;
-    margin: 0 0 8px;
-}
-
-.historical-events ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.historical-events li {
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 5px;
-    line-height: 1.4;
-}
-
 @media (max-width: 768px) {
-    .calendar-clock-container {
-        bottom: 10px;
-        right: 10px;
+    .clock-container {
+        bottom: 15px;
+        right: 15px;
         padding: 12px;
     }
     
     .clock .time {
         font-size: 1.3rem;
     }
-    
-    .solar .month-day {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 480px) {
-    .calendar-clock-container {
-        bottom: 5px;
-        right: 5px;
+    .clock-container {
+        bottom: 10px;
+        right: 10px;
         padding: 10px;
+        max-width: 150px;
     }
     
     .clock .time {
@@ -337,18 +268,6 @@ h3 {
     
     .clock .date {
         font-size: 0.8rem;
-    }
-    
-    .solar .year {
-        font-size: 0.8rem;
-    }
-    
-    .solar .month-day {
-        font-size: 0.9rem;
-    }
-    
-    .calendar {
-        display: none;
     }
 }
 
