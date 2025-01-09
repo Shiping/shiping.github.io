@@ -22,9 +22,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="links.html">Links</a></li>
-            </ul>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="links.html" class="active">Links</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
         </nav>
     </header>
 
@@ -86,6 +87,25 @@
             document.getElementById('visitCount').textContent = 1;
         }
     </script>
+    <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>
+    <div class="calendar-clock-container">
+        <div class="calendar-clock">
+            <div class="clock">
+                <span class="time"></span>
+                <span class="date"></span>
+            </div>
+            <div class="calendar">
+                <div class="solar">
+                    <span class="year"></span>
+                    <span class="month-day"></span>
+                </div>
+                <div class="lunar">
+                    <span class="lunar-date"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/calendar-clock.js"></script>
 </body>
 </html>

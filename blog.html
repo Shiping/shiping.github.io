@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiping Liu's Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Shiping Liu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="links.html">Links</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="blog-posts">
+            <h2>Blog Posts</h2>
+            <div class="post-list">
+                <article class="post">
+                    <h3 class="post-title">Recent Advances in Single-Cell Sequencing</h3>
+                    <div class="post-meta">Published on: 2025-01-15</div>
+                    <p class="post-excerpt">Exploring the latest developments in single-cell sequencing technologies and their applications in cancer research...</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </article>
+
+                <article class="post">
+                    <h3 class="post-title">The Future of Spatial Omics</h3>
+                    <div class="post-meta">Published on: 2024-12-20</div>
+                    <p class="post-excerpt">An overview of spatial omics technologies and their potential impact on neuroscience research...</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </article>
+
+                <article class="post">
+                    <h3 class="post-title">Challenges in Brain Connectomics</h3>
+                    <div class="post-meta">Published on: 2024-11-10</div>
+                    <p class="post-excerpt">Discussing the technical and computational challenges in mapping the human brain connectome...</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
+        <p>Created by the help of Deepseek.</p>
+        <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 10px;">
+            Page views: <span id="visitCount">0</span>
+        </p>
+    </footer>
+    <script>
+        // Visit counter
+        if (localStorage.getItem('visitCount')) {
+            let count = parseInt(localStorage.getItem('visitCount')) + 1;
+            localStorage.setItem('visitCount', count);
+            document.getElementById('visitCount').textContent = count;
+        } else {
+            localStorage.setItem('visitCount', 1);
+            document.getElementById('visitCount').textContent = 1;
+        }
+    </script>
+    <script src="scripts/solarlunar.min.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/calendar-clock.js"></script>
+    <div class="calendar-clock-container"></div>
+</body>
+</html>
