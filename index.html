@@ -99,6 +99,7 @@
                     <img src="images/ShipingLiu.jpg" alt="Shiping Liu" class="profile-image">
                 </div>
                 <div class="profile-content">
+                    <p><a href="#" id="toggle-image">Show Profile Image</a></p>
                     <p>I am a senior scientist specializing in bioinformatics, brain science, and oncology at BGI-Research and CAS (<a href="https://people.ucas.edu.cn/~shiping" target="_blank">Chinese</a> and <a href="https://people.ucas.edu.cn/~shiping?language=en" target="_blank">English</a>). I earned my bachelor's degree in 'Applied Physics', and my Ph.D. in 'Genetics' from South China University of Technology. Over the years, I have contributed to numerous landmark international genomics research projects, including the giant panda genome, polar bear population genomics, the Genome 10K (G10K) project, the Cancer Single Cell Project, and the Human Cell Atlas.</p>
                     <p>I am also a co-founder of the Spatial and Temporal Omics Neuroscience Consortium (STOC-Neuro) and serve as a member of the secretariat for the Mesoscopic Brain Connectome Project (MBCP).</p>
                     <p>To date, I have published over 50 peer-reviewed SCI papers, which have collectively garnered more than 10,000 citations, with an H-index exceeding 30. Among these publications, I have authored 21 as the primary author (first author, co-first author, or corresponding author), including six in top journals including Cell, Nature, and Science.</p>
@@ -141,20 +142,21 @@
     <footer>
         <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
         <p>Created by the help of Deepseek.</p>
-        <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 10px;">
-            Page views: <span id="visitCount">0</span>
-        </p>
     </footer>
     <script>
-        // Visit counter
-        if (localStorage.getItem('visitCount')) {
-            let count = parseInt(localStorage.getItem('visitCount')) + 1;
-            localStorage.setItem('visitCount', count);
-            document.getElementById('visitCount').textContent = count;
-        } else {
-            localStorage.setItem('visitCount', 1);
-            document.getElementById('visitCount').textContent = 1;
-        }
+        document.getElementById('toggle-image').addEventListener('click', function(e) {
+            e.preventDefault();
+            const imageContainer = document.querySelector('.profile-image-container');
+            const toggleLink = document.getElementById('toggle-image');
+            
+            if (imageContainer.classList.contains('show-image')) {
+                imageContainer.classList.remove('show-image');
+                toggleLink.textContent = 'Show Profile Image';
+            } else {
+                imageContainer.classList.add('show-image');
+                toggleLink.textContent = 'Hide Profile Image';
+            }
+        });
     </script>
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>

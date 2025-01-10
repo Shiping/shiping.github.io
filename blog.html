@@ -21,7 +21,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="blog-container">
         <section id="blog-posts">
             <h2>Blog Posts</h2>
             <div class="post-list">
@@ -47,25 +47,22 @@
                 </article>
             </div>
         </section>
+        
+        <aside id="rss-feed">
+            <h2>Latest Research News</h2>
+            <div id="rss-content" class="rss-list">
+                <!-- RSS content will be loaded here -->
+            </div>
+        </aside>
     </main>
+    
+    <script src="scripts/rss-feed.js"></script>
 
     <footer>
         <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
         <p>Created by the help of Deepseek.</p>
-        <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 10px;">
-            Page views: <span id="visitCount">0</span>
-        </p>
     </footer>
     <script>
-        // Visit counter
-        if (localStorage.getItem('visitCount')) {
-            let count = parseInt(localStorage.getItem('visitCount')) + 1;
-            localStorage.setItem('visitCount', count);
-            document.getElementById('visitCount').textContent = count;
-        } else {
-            localStorage.setItem('visitCount', 1);
-            document.getElementById('visitCount').textContent = 1;
-        }
     </script>
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>

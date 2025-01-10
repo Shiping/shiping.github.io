@@ -121,20 +121,8 @@
     <footer>
         <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
         <p>Created by the help of Deepseek.</p>
-        <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 10px;">
-            Page views: <span id="visitCount">0</span>
-        </p>
     </footer>
     <script>
-        // Visit counter
-        if (localStorage.getItem('visitCount')) {
-            let count = parseInt(localStorage.getItem('visitCount')) + 1;
-            localStorage.setItem('visitCount', count);
-            document.getElementById('visitCount').textContent = count;
-        } else {
-            localStorage.setItem('visitCount', 1);
-            document.getElementById('visitCount').textContent = 1;
-        }
     </script>
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>
