@@ -1,40 +1,53 @@
-/* Calendar animations */
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade In Animation */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+/* Text Glow Animation */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(100, 181, 246, 0.8);
+  }
 }
 
-.calendar-clock {
-    animation: fadeIn 0.5s ease-out;
+/* Gradient Border Animation */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(100, 181, 246, 0.5);
+  }
+  50% {
+    border-color: rgba(100, 181, 246, 0.8);
+  }
 }
 
-.calendar-clock .time {
-    animation: slideUp 0.5s ease-out 0.2s backwards;
+/* Hover Scale Animation */
+.scale-hover {
+  transition: transform 0.3s ease;
 }
 
-.calendar-clock .date {
-    animation: slideUp 0.5s ease-out 0.4s backwards;
-}
-
-.calendar-clock .historical-events li {
-    animation: slideUp 0.5s ease-out;
-    animation-delay: calc(0.1s * var(--i));
-}
-
-.calendar-clock .holiday-info {
-    animation: slideUp 0.5s ease-out 0.6s backwards;
-}
-
-/* Smooth transitions for updates */
-.calendar-clock .time,
-.calendar-clock .date,
-.calendar-clock .year,
-.calendar-clock .month-day,
-.calendar-clock .lunar-date {
-    transition: all 0.3s ease-out;
+.scale-hover:hover {
+  transform: scale(1.02);
 }

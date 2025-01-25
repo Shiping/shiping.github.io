@@ -5,78 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shiping Liu's Blog</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
     <header>
         <h1>Shiping Liu</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="links.html">Links</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html" class="scale-hover">Home</a></li>
+                <li><a href="research.html" class="scale-hover">Research</a></li>
+                <li><a href="publications.html" class="scale-hover">Publications</a></li>
+                <li><a href="gallery.html" class="scale-hover">Gallery</a></li>
+                <li><a href="links.html" class="scale-hover">Links</a></li>
+                <li><a href="blog.html" class="scale-hover">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="blog-container">
+    <main class="blog-container modern-layout">
         <section id="blog-posts">
-            <h2>Blog Posts</h2>
-            <div class="post-list">
-                <article class="post">
+            <h2 class="section-title">Blog Posts</h2>
+            <div class="post-list modern-grid">
+                <article class="modern-card scale-hover">
                     <h3 class="post-title">Spateo时空算法工具包登陆DCS Cloud平台</h3>
                     <div class="post-meta">发布日期：2025-01-23</div>
-                    <p class="post-excerpt">华大生命科学研究院联合斯坦福大学、武汉大学等机构开发的时空算法工具包Spateo，已登陆<a href="https://cloud.stomics.tech" target="_blank">DCS Cloud平台</a>，支持一键式全链时空组学数据分析。该工具包具备三维重建、细胞互作推断等功能，显著提升了胚胎发育、脑科学等领域的研究效率，标志着时空组学技术的重大突破。</p>
+                    <p class="post-excerpt">华大生命科学研究院联合斯坦福大学、武汉大学等机构开发的时空算法工具包Spateo，已登陆<a href="https://cloud.stomics.tech" target="_blank" class="scale-hover">DCS Cloud平台</a>，支持一键式全链时空组学数据分析。该工具包具备三维重建、细胞互作推断等功能，显著提升了胚胎发育、脑科学等领域的研究效率，标志着时空组学技术的重大突破。</p>
                     <div class="post-links">
-                        <a href="https://cloud.stomics.tech" class="read-more" target="_blank">访问DCS Cloud平台 →</a>
-                        <a href="https://mp.weixin.qq.com/s/uXOY1dHlooykhqxhSPEmkw" class="read-more" target="_blank">阅读微信公众号文章 →</a>
+                        <a href="https://cloud.stomics.tech" class="read-more scale-hover" target="_blank">访问DCS Cloud平台 →</a>
+                        <a href="https://mp.weixin.qq.com/s/uXOY1dHlooykhqxhSPEmkw" class="read-more scale-hover" target="_blank">阅读微信公众号文章 →</a>
                     </div>
                 </article>
 
-                <article class="post">
+                <article class="modern-card scale-hover">
                     <h3 class="post-title">Recent Advances in Single-Cell Sequencing</h3>
                     <div class="post-meta">Published on: 2025-01-15</div>
                     <p class="post-excerpt">Exploring the latest developments in single-cell sequencing technologies and their applications in cancer research...</p>
-                    <a href="#" class="read-more">Read more →</a>
+                    <a href="#" class="read-more scale-hover">Read more →</a>
                 </article>
 
-                <article class="post">
+                <article class="modern-card scale-hover">
                     <h3 class="post-title">The Future of Spatial Omics</h3>
                     <div class="post-meta">Published on: 2024-12-20</div>
                     <p class="post-excerpt">An overview of spatial omics technologies and their potential impact on neuroscience research...</p>
-                    <a href="#" class="read-more">Read more →</a>
+                    <a href="#" class="read-more scale-hover">Read more →</a>
                 </article>
 
-                <article class="post">
+                <article class="modern-card scale-hover">
                     <h3 class="post-title">Challenges in Brain Connectomics</h3>
                     <div class="post-meta">Published on: 2024-11-10</div>
                     <p class="post-excerpt">Discussing the technical and computational challenges in mapping the human brain connectome...</p>
-                    <a href="#" class="read-more">Read more →</a>
+                    <a href="#" class="read-more scale-hover">Read more →</a>
                 </article>
             </div>
         </section>
         
-        <aside id="rss-feed">
-            <h2>Latest Research News</h2>
-            <div id="rss-content" class="rss-list">
+        <aside id="rss-feed" class="modern-feed">
+            <h2 class="section-title">Latest Research News</h2>
+            <div id="rss-content" class="rss-list modern-grid">
                 <!-- RSS content will be loaded here -->
             </div>
         </aside>
     </main>
     
-    <script src="scripts/rss-feed.js"></script>
-
     <footer>
-        <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
-        <p>Created by the help of Deepseek.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: liushiping@genomics.cn</li>
+                    <li>Location: Hangzhou, China</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://www.bgi.com/global/" class="scale-hover">BGI Research</a></li>
+                    <li><a href="https://people.ucas.edu.cn/~shiping" class="scale-hover">UCAS Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
+            <p>Created by the help of Deepseek.</p>
+        </div>
     </footer>
-    <script>
-    </script>
+
+    <div class="clock-container">
+        <div class="clock"></div>
+    </div>
+
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>
     <script src="scripts/calendar-clock.js"></script>
-    <div class="calendar-clock-container"></div>
+    <script src="scripts/rss-feed.js"></script>
 </body>
 </html>

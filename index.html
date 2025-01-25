@@ -81,33 +81,33 @@
         <h1>Shiping Liu</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="links.html">Links</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html" class="scale-hover">Home</a></li>
+                <li><a href="research.html" class="scale-hover">Research</a></li>
+                <li><a href="publications.html" class="scale-hover">Publications</a></li>
+                <li><a href="gallery.html" class="scale-hover">Gallery</a></li>
+                <li><a href="links.html" class="scale-hover">Links</a></li>
+                <li><a href="blog.html" class="scale-hover">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about">
+        <section id="about" class="modern-card">
             <h2>About Me</h2>
             <div class="profile-container">
                 <div class="profile-image-container">
-                    <img src="images/ShipingLiu.jpg" alt="Shiping Liu" class="profile-image">
+                    <img src="images/ShipingLiu.jpg" alt="Shiping Liu" class="profile-image scale-hover">
                 </div>
                 <div class="profile-content">
-                    <p><a href="#" id="toggle-image">Show Profile Image</a></p>
-                    <p>I am a senior scientist specializing in bioinformatics, brain science, and oncology at BGI-Research and CAS (<a href="https://people.ucas.edu.cn/~shiping" target="_blank">Chinese</a> and <a href="https://people.ucas.edu.cn/~shiping?language=en" target="_blank">English</a>). I earned my bachelor's degree in 'Applied Physics', and my Ph.D. in 'Genetics' from South China University of Technology. Over the years, I have contributed to numerous landmark international genomics research projects, including the giant panda genome, polar bear population genomics, the Genome 10K (G10K) project, the Cancer Single Cell Project, and the Human Cell Atlas.</p>
+                    <p><a href="#" id="toggle-image" class="scale-hover">Show Profile Image</a></p>
+                    <p>I am a senior scientist specializing in bioinformatics, brain science, and oncology at BGI-Research and CAS (<a href="https://people.ucas.edu.cn/~shiping" target="_blank" class="scale-hover">Chinese</a> and <a href="https://people.ucas.edu.cn/~shiping?language=en" target="_blank" class="scale-hover">English</a>). I earned my bachelor's degree in 'Applied Physics', and my Ph.D. in 'Genetics' from South China University of Technology. Over the years, I have contributed to numerous landmark international genomics research projects, including the giant panda genome, polar bear population genomics, the Genome 10K (G10K) project, the Cancer Single Cell Project, and the Human Cell Atlas.</p>
                     <p>I am also a co-founder of the Spatial and Temporal Omics Neuroscience Consortium (STOC-Neuro) and serve as a member of the secretariat for the Mesoscopic Brain Connectome Project (MBCP).</p>
                     <p>To date, I have published over 50 peer-reviewed SCI papers, which have collectively garnered more than 10,000 citations, with an H-index exceeding 30. Among these publications, I have authored 21 as the primary author (first author, co-first author, or corresponding author), including six in top journals including Cell, Nature, and Science.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="modern-card">
             <h2>Contact Information</h2>
             <ul>
                 <li>Email: 
@@ -122,13 +122,13 @@
                         <li>Key Laboratory of Spatial Omics of Zhejiang Province, BGI Research, Hangzhou 310030, China</li>
                     </ol>
                 </li>
-                <li>Personal Homepage: <a href="https://shiping.github.io/">https://shiping.github.io/</a></li>
-                <li>ORCID: <a href="https://orcid.org/0000-0003-0019-619X">https://orcid.org/0000-0003-0019-619X</a></li>
-                <li>Google Scholar: <a href="https://scholar.google.com.hk/citations?hl=en&user=W-S1wOUAAAAJ">https://scholar.google.com.hk/citations?hl=en&user=W-S1wOUAAAAJ</a></li>
+                <li>Personal Homepage: <a href="https://shiping.github.io/" class="scale-hover">https://shiping.github.io/</a></li>
+                <li>ORCID: <a href="https://orcid.org/0000-0003-0019-619X" class="scale-hover">https://orcid.org/0000-0003-0019-619X</a></li>
+                <li>Google Scholar: <a href="https://scholar.google.com.hk/citations?hl=en&user=W-S1wOUAAAAJ" class="scale-hover">https://scholar.google.com.hk/citations?hl=en&user=W-S1wOUAAAAJ</a></li>
             </ul>
         </section>
 
-        <section id="affiliations">
+        <section id="affiliations" class="modern-card">
             <h2>Affiliations</h2>
             <ol>
                 <li>Senior scientist, BGI Research, Hangzhou</li>
@@ -140,9 +140,32 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
-        <p>Created by the help of Deepseek.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: liushiping@genomics.cn</li>
+                    <li>Location: Hangzhou, China</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://www.bgi.com/global/" class="scale-hover">BGI Research</a></li>
+                    <li><a href="https://people.ucas.edu.cn/~shiping" class="scale-hover">UCAS Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
+            <p>Created by the help of Deepseek.</p>
+        </div>
     </footer>
+
+    <div class="clock-container">
+        <div class="clock"></div>
+    </div>
+
     <script>
         document.getElementById('toggle-image').addEventListener('click', function(e) {
             e.preventDefault();
@@ -161,6 +184,5 @@
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>
     <script src="scripts/calendar-clock.js"></script>
-    <div class="calendar-clock-container"></div>
 </body>
 </html>

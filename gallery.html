@@ -13,6 +13,7 @@
       gtag('config', 'C67XLFBTB7');
     </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
         .swiper {
@@ -26,31 +27,54 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .swiper-slide:hover {
+            transform: scale(1.02);
         }
         .swiper-slide img {
             max-width: 100%;
             max-height: 400px;
             object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
         .caption {
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 1.2rem;
-            color: #333;
+            color: var(--text-primary);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .swiper-button-next,
         .swiper-button-prev {
-            color: #2c3e50;
-            background: rgba(255, 255, 255, 0.8);
-            width: 40px;
-            height: 40px;
+            color: var(--accent-color);
+            background: rgba(19, 20, 26, 0.8);
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(19, 20, 26, 0.95);
+            transform: scale(1.1);
         }
         .swiper-button-next::after,
         .swiper-button-prev::after {
             font-size: 1.5rem;
+        }
+        .swiper-pagination-bullet {
+            background: var(--accent-color);
+            opacity: 0.5;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: var(--accent-color);
         }
     </style>
 </head>
@@ -59,42 +83,42 @@
         <h1>Shiping Liu</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="links.html">Links</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html" class="scale-hover">Home</a></li>
+                <li><a href="research.html" class="scale-hover">Research</a></li>
+                <li><a href="publications.html" class="scale-hover">Publications</a></li>
+                <li><a href="gallery.html" class="scale-hover">Gallery</a></li>
+                <li><a href="links.html" class="scale-hover">Links</a></li>
+                <li><a href="blog.html" class="scale-hover">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="gallery">
+        <section id="gallery" class="modern-card">
             <h2>Gallery</h2>
             <div class="swiper" style="padding: 20px 0;">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide scale-hover">
                         <img src="images/team.jpg" alt="Research Team">
-                        <p class="caption">BGI Center Shenzhen</Center></p>
+                        <p class="caption">BGI Center Shenzhen</p>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide scale-hover">
                         <img src="images/back01.jpg" alt="Hangzhou landscape">
                         <p class="caption">Hangzhou landscape</p>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide scale-hover">
                         <img src="images/lab.jpg" alt="Laboratory">
                         <p class="caption">Complex System</p>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide scale-hover">
                         <img src="images/two.JPG" alt="Sisters">
                         <p class="caption">Sisters</p>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide scale-hover">
                         <img src="images/nancy.jpg" alt="Nancy">
                         <p class="caption">Nancy</p>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide scale-hover">
                         <img src="images/sunny.jpg" alt="Sunny">
                         <p class="caption">Sunny</p>
                     </div>
@@ -109,20 +133,44 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
-        <p>Created by the help of Deepseek.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: liushiping@genomics.cn</li>
+                    <li>Location: Hangzhou, China</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://www.bgi.com/global/" class="scale-hover">BGI Research</a></li>
+                    <li><a href="https://people.ucas.edu.cn/~shiping" class="scale-hover">UCAS Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
+            <p>Created by the help of Deepseek.</p>
+        </div>
     </footer>
-    <script>
-    </script>
+
+    <div class="clock-container">
+        <div class="clock"></div>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
             loop: true,
             effect: 'slide',
-            speed: 600,
+            speed: 800,
             spaceBetween: 30,
             centeredSlides: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -136,6 +184,5 @@
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>
     <script src="scripts/calendar-clock.js"></script>
-    <div class="calendar-clock-container"></div>
 </body>
 </html>

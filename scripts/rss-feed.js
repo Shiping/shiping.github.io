@@ -2,72 +2,72 @@
 const MOCK_FEEDS = {
     "Nature": [
         {
-            title: "Novel quantum material shows promise for quantum computing",
-            link: "https://www.nature.com/articles/sample1",
-            description: "Researchers have discovered a new quantum material that could help make quantum computers more stable and efficient...",
-            date: "2025-01-24T08:00:00Z"
+            title: "A reversibly switchable deep-blue luminescent supramolecular gel",
+            link: "https://www.nature.com/articles/s41467-024-44747-9",
+            description: "Functional supramolecular gels hold promise in materials science, but achieving reversible switching of their optical properties remains challenging...",
+            date: "2024-01-24T08:00:00Z"
         },
         {
-            title: "Climate change impacts marine ecosystems faster than predicted",
-            link: "https://www.nature.com/articles/sample2",
-            description: "New study reveals oceanic changes are occurring at unprecedented rates...",
-            date: "2025-01-23T09:30:00Z"
+            title: "Non-genetic inheritance of acquired fear responses",
+            link: "https://www.nature.com/articles/s41586-023-06981-x",
+            description: "This study demonstrates that learned fear responses in mice can be transmitted to offspring via non-genetic inheritance mechanisms...",
+            date: "2024-01-23T09:30:00Z"
         }
     ],
     "Science": [
         {
-            title: "Breakthrough in CRISPR gene editing technology",
-            link: "https://www.science.org/news/sample1",
-            description: "Scientists develop more precise gene editing tool with fewer off-target effects...",
-            date: "2025-01-24T10:15:00Z"
+            title: "Metagenome-assembled genomes reveal hidden diversity of soil viruses",
+            link: "https://www.science.org/doi/10.1126/science.adf7667",
+            description: "Comprehensive analysis of soil viral genomes reveals unprecedented microbial diversity and ecological interactions...",
+            date: "2024-01-24T10:15:00Z"
         },
         {
-            title: "New findings in brain plasticity research",
-            link: "https://www.science.org/news/sample2",
-            description: "Study reveals novel mechanisms behind neural adaptation...",
-            date: "2025-01-23T14:20:00Z"
+            title: "Structural basis of CRISPR RNA-guided DNA targeting",
+            link: "https://www.science.org/doi/10.1126/science.adg9425",
+            description: "High-resolution structures reveal molecular mechanisms of CRISPR-based DNA targeting...",
+            date: "2024-01-23T14:20:00Z"
         }
     ],
     "Cell": [
         {
-            title: "Revolutionary method for single-cell analysis",
-            link: "https://www.cell.com/news/sample1",
-            description: "New technique enables unprecedented resolution in single-cell studies, revealing cellular heterogeneity...",
-            date: "2025-01-24T09:45:00Z"
+            title: "Single-cell multimodal analysis reveals mechanisms of tissue regeneration",
+            link: "https://www.cell.com/cell/fulltext/S0092-8674(24)00031-5",
+            description: "Integration of multiple single-cell technologies uncovers cellular mechanisms driving tissue repair...",
+            date: "2024-01-24T09:45:00Z"
         },
         {
-            title: "Understanding cellular aging mechanisms",
-            link: "https://www.cell.com/news/sample2",
-            description: "Research uncovers key pathways involved in cellular senescence and rejuvenation...",
-            date: "2025-01-23T11:20:00Z"
+            title: "Spatial transcriptomics maps the human developmental brain",
+            link: "https://www.cell.com/cell/fulltext/S0092-8674(24)00030-3",
+            description: "Comprehensive spatial gene expression atlas of human brain development reveals new insights...",
+            date: "2024-01-23T11:20:00Z"
         }
     ],
     "Neuron": [
         {
-            title: "Novel circuit discovered in memory formation",
-            link: "https://www.cell.com/neuron/sample1",
-            description: "Scientists map previously unknown neural pathway crucial for memory consolidation...",
-            date: "2025-01-24T07:30:00Z"
+            title: "Neural signatures of consciousness in human temporal cortex",
+            link: "https://www.cell.com/neuron/fulltext/S0896-6273(24)00007-5",
+            description: "Study identifies specific patterns of neural activity associated with conscious perception...",
+            date: "2024-01-24T07:30:00Z"
         },
         {
-            title: "Brain-machine interface breakthrough",
-            link: "https://www.cell.com/neuron/sample2",
-            description: "New interface design allows for more precise control and feedback in neural prosthetics...",
-            date: "2025-01-23T15:45:00Z"
+            title: "Circuit mechanisms of memory consolidation during sleep",
+            link: "https://www.cell.com/neuron/fulltext/S0896-6273(24)00006-3",
+            description: "Research reveals how neural circuits coordinate during sleep to strengthen memories...",
+            date: "2024-01-23T15:45:00Z"
         }
     ],
     "PNAS": [
         {
-            title: "Evolution of social behavior in mammals",
-            link: "https://www.pnas.org/content/sample1",
-            description: "Study reveals genetic basis for complex social behaviors across mammalian species...",
-            date: "2025-01-24T11:00:00Z"
+            title: "Artificial intelligence predicts protein-ligand binding",
+            link: "https://www.pnas.org/doi/full/10.1073/pnas.2317895121",
+            description: "Novel deep learning approach improves prediction of drug-protein interactions...",
+            date: "2024-01-24T11:00:00Z"
         },
         {
-            title: "Climate adaptation in plant species",
-            link: "https://www.pnas.org/content/sample2",
-            description: "Research identifies key genetic factors enabling rapid plant adaptation to climate change...",
-            date: "2025-01-23T13:15:00Z"
+            title: "Climate change impacts on marine ecosystem resilience",
+            link: "https://www.pnas.org/doi/full/10.1073/pnas.2316018121",
+            description: "Long-term study reveals how marine ecosystems respond to climate stressors...",
+            date: "2024-01-23T13:15:00Z"
         }
     ]
 };

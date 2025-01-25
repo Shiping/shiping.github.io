@@ -13,24 +13,25 @@
       gtag('config', 'C67XLFBTB7');
     </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
     <header>
         <h1>Shiping Liu</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="links.html">Links</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html" class="scale-hover">Home</a></li>
+                <li><a href="research.html" class="scale-hover">Research</a></li>
+                <li><a href="publications.html" class="scale-hover">Publications</a></li>
+                <li><a href="gallery.html" class="scale-hover">Gallery</a></li>
+                <li><a href="links.html" class="scale-hover">Links</a></li>
+                <li><a href="blog.html" class="scale-hover">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="research-intro">
+        <section id="research-intro" class="modern-card">
             <h2>Research Overview</h2>
             <p>My group is committed to integrating interdisciplinary knowledge from physics, computer science, and mathematics to advance research in multi-omics big data within the life sciences. Our mission is to unravel the complexities of biological systems, including brain science, tumor immunology, and the dynamic evolution of organ function across species.</p>
         </section>
@@ -38,45 +39,70 @@
         <section id="research-areas">
             <h2>Research Areas</h2>
             
-            <article>
-                <h3>1. Multi-Omics Big Data / Computational Biology</h3>
-                <p>Combining genomics, single-cell analysis, spatial transcriptomics, and epigenetics, we utilize multi-omics big data to elucidate mechanisms at the molecular and cellular levels during biological processes.</p>
-            </article>
+            <div class="research-areas">
+                <article class="modern-card scale-hover">
+                    <h3>1. Multi-Omics Big Data / Computational Biology</h3>
+                    <p>Combining genomics, single-cell analysis, spatial transcriptomics, and epigenetics, we utilize multi-omics big data to elucidate mechanisms at the molecular and cellular levels during biological processes.</p>
+                </article>
 
-            <article>
-                <h3>2. Evolutionary Developmental at Cellular and Functional Levels</h3>
-                <p>Focusing on understanding the spatiotemporal dimensions of the central dogma (from the central dogma to spatiotemporal principles), we develop novel computational methods for studying evolutionary development at molecular, cellular, and structural levels. This includes exploring the mechanisms of tissue and organ development and investigating the principles of structure and function evolution.</p>
-            </article>
+                <article class="modern-card scale-hover">
+                    <h3>2. Evolutionary Developmental at Cellular and Functional Levels</h3>
+                    <p>Focusing on understanding the spatiotemporal dimensions of the central dogma (from the central dogma to spatiotemporal principles), we develop novel computational methods for studying evolutionary development at molecular, cellular, and structural levels. This includes exploring the mechanisms of tissue and organ development and investigating the principles of structure and function evolution.</p>
+                </article>
 
-            <article>
-                <h3>3. Brain Science and Cancer Research</h3>
-                <p>We construct cell atlases of brain tissues and tumor microenvironments, study the diversity of cell types and spatial structures in the nervous and immune systems, and explore the regulatory mechanisms of cell migration and differentiation.</p>
-            </article>
+                <article class="modern-card scale-hover">
+                    <h3>3. Brain Science and Cancer Research</h3>
+                    <p>We construct cell atlases of brain tissues and tumor microenvironments, study the diversity of cell types and spatial structures in the nervous and immune systems, and explore the regulatory mechanisms of cell migration and differentiation.</p>
+                </article>
 
-            <article>
-                <h3>4. Comparative Genomics</h3>
-                <p>Through genomic and population genetic analyses, we investigate the genetic mechanisms underlying species adaptability and changes in population structure.</p>
-            </article>
+                <article class="modern-card scale-hover">
+                    <h3>4. Comparative Genomics</h3>
+                    <p>Through genomic and population genetic analyses, we investigate the genetic mechanisms underlying species adaptability and changes in population structure.</p>
+                </article>
+            </div>
         </section>
 
-        <section id="join-us">
+        <section id="join-us" class="modern-card">
             <h2>Join Our Research</h2>
             <p>We invite you to join our research group to explore the frontiers of science and drive innovation in life sciences. Together, let's embark on this exciting journey of discovery!</p>
-                <li>
-                    Contact Email: liushiping@genomics.cn or shipinglau@gmail.com
-                </li>
+            <div class="contact-info">
+                <p>Contact Email: 
+                    <a href="mailto:liushiping@genomics.cn" class="scale-hover">liushiping@genomics.cn</a> or 
+                    <a href="mailto:shipinglau@gmail.com" class="scale-hover">shipinglau@gmail.com</a>
+                </p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
-        <p>Created by the help of Deepseek.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: liushiping@genomics.cn</li>
+                    <li>Location: Hangzhou, China</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://www.bgi.com/global/" class="scale-hover">BGI Research</a></li>
+                    <li><a href="https://people.ucas.edu.cn/~shiping" class="scale-hover">UCAS Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shiping LIU. All rights reserved.</p>
+            <p>Created by the help of Deepseek.</p>
+        </div>
     </footer>
-    <script>
-    </script>
+
+    <div class="clock-container">
+        <div class="clock"></div>
+    </div>
+
     <script src="scripts/solarlunar.min.js"></script>
     <script src="scripts/nav.js"></script>
     <script src="scripts/calendar-clock.js"></script>
-    <div class="calendar-clock-container"></div>
 </body>
 </html>
