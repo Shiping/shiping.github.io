@@ -1,69 +1,95 @@
-// RSS feed configuration
-const CORS_PROXIES = [
-    "https://cors-anywhere.herokuapp.com/",
-    "https://api.allorigins.win/raw?url="
-];
-
-const RSS_FEEDS = [
-    {
-        name: "Nature Latest Research", 
-        url: "https://www.nature.com/nature.rss",
-        maxItems: 5
-    },
-    {
-        name: "Science Magazine",
-        url: "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
-        maxItems: 5
-    }
-];
-
-// Function to try different CORS proxies
-async function tryFetchWithProxies(url) {
-    for (const proxy of CORS_PROXIES) {
-        try {
-            const response = await fetch(proxy + encodeURIComponent(url));
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const text = await response.text();
-            return text;
-        } catch (error) {
-            console.warn(`Failed to fetch with proxy ${proxy}:`, error);
-            continue;
+// Mock RSS feed data
+const MOCK_FEEDS = {
+    "Nature": [
+        {
+            title: "Novel quantum material shows promise for quantum computing",
+            link: "https://www.nature.com/articles/sample1",
+            description: "Researchers have discovered a new quantum material that could help make quantum computers more stable and efficient...",
+            date: "2025-01-24T08:00:00Z"
+        },
+        {
+            title: "Climate change impacts marine ecosystems faster than predicted",
+            link: "https://www.nature.com/articles/sample2",
+            description: "New study reveals oceanic changes are occurring at unprecedented rates...",
+            date: "2025-01-23T09:30:00Z"
         }
-    }
-    throw new Error('All CORS proxies failed');
-}
+    ],
+    "Science": [
+        {
+            title: "Breakthrough in CRISPR gene editing technology",
+            link: "https://www.science.org/news/sample1",
+            description: "Scientists develop more precise gene editing tool with fewer off-target effects...",
+            date: "2025-01-24T10:15:00Z"
+        },
+        {
+            title: "New findings in brain plasticity research",
+            link: "https://www.science.org/news/sample2",
+            description: "Study reveals novel mechanisms behind neural adaptation...",
+            date: "2025-01-23T14:20:00Z"
+        }
+    ],
+    "Cell": [
+        {
+            title: "Revolutionary method for single-cell analysis",
+            link: "https://www.cell.com/news/sample1",
+            description: "New technique enables unprecedented resolution in single-cell studies, revealing cellular heterogeneity...",
+            date: "2025-01-24T09:45:00Z"
+        },
+        {
+            title: "Understanding cellular aging mechanisms",
+            link: "https://www.cell.com/news/sample2",
+            description: "Research uncovers key pathways involved in cellular senescence and rejuvenation...",
+            date: "2025-01-23T11:20:00Z"
+        }
+    ],
+    "Neuron": [
+        {
+            title: "Novel circuit discovered in memory formation",
+            link: "https://www.cell.com/neuron/sample1",
+            description: "Scientists map previously unknown neural pathway crucial for memory consolidation...",
+            date: "2025-01-24T07:30:00Z"
+        },
+        {
+            title: "Brain-machine interface breakthrough",
+            link: "https://www.cell.com/neuron/sample2",
+            description: "New interface design allows for more precise control and feedback in neural prosthetics...",
+            date: "2025-01-23T15:45:00Z"
+        }
+    ],
+    "PNAS": [
+        {
+            title: "Evolution of social behavior in mammals",
+            link: "https://www.pnas.org/content/sample1",
+            description: "Study reveals genetic basis for complex social behaviors across mammalian species...",
+            date: "2025-01-24T11:00:00Z"
+        },
+        {
+            title: "Climate adaptation in plant species",
+            link: "https://www.pnas.org/content/sample2",
+            description: "Research identifies key genetic factors enabling rapid plant adaptation to climate change...",
+            date: "2025-01-23T13:15:00Z"
+        }
+    ]
+};
 
-// Function to parse RSS feed
+// Function to fetch RSS feed (using mock data)
 async function fetchRSSFeed(feed) {
     try {
-        const text = await tryFetchWithProxies(feed.url);
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, "text/xml");
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 500));
         
-        if (xml.querySelector("parsererror")) {
-            throw new Error("Invalid RSS feed format");
+        const mockItems = MOCK_FEEDS[feed.name] || [];
+        if (!mockItems.length) {
+            throw new Error('No items found in feed');
         }
         
-        const items = xml.querySelectorAll("item");
-        if (!items.length) {
-            throw new Error("No items found in feed");
-        }
-        
-        const feedItems = [];
-        for (let i = 0; i < Math.min(items.length, feed.maxItems); i++) {
-            const item = items[i];
-            const description = item.querySelector("description")?.textContent || "";
-            
-            feedItems.push({
-                title: item.querySelector("title")?.textContent?.trim() || "No title",
-                link: item.querySelector("link")?.textContent?.trim() || "#",
-                description: description.length > 200 ? description.substring(0, 200) + "..." : description,
-                date: item.querySelector("pubDate")?.textContent || new Date().toISOString()
-            });
-        }
-        return feedItems;
+        return mockItems.map(item => ({
+            title: item.title,
+            link: item.link,
+            description: item.description,
+            date: item.date,
+            feedName: feed.name
+        }));
     } catch (error) {
         console.error(`Error fetching RSS feed ${feed.name}:`, error);
         throw new Error(`Failed to fetch ${feed.name}: ${error.message}`);
@@ -104,7 +130,7 @@ function displayRSSItems(items, error = null) {
     rssContent.innerHTML = itemsHtml;
 }
 
-// Function to load all RSS feeds
+// Function to load all feeds
 async function loadAllFeeds() {
     const rssContent = document.getElementById("rss-content");
     if (!rssContent) return;
@@ -114,10 +140,10 @@ async function loadAllFeeds() {
 
     try {
         const allItems = [];
-        for (const feed of RSS_FEEDS) {
-            const items = await fetchRSSFeed(feed);
-            // Add feed name to each item
-            items.forEach(item => item.feedName = feed.name);
+        const feedNames = Object.keys(MOCK_FEEDS);
+        
+        for (const feedName of feedNames) {
+            const items = await fetchRSSFeed({ name: feedName });
             allItems.push(...items);
         }
         
