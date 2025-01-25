@@ -180,6 +180,40 @@ h3 {
     margin-top: 20px;
 }
 
+.rss-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.rss-error {
+    background: #fff3f3;
+    border: 1px solid #ffcdd2;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    color: #d32f2f;
+}
+
+.rss-error button,
+.rss-item button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.rss-error button:hover,
+.rss-item button:hover {
+    background: #2980b9;
+}
+
 .rss-item {
     padding: 15px;
     margin-bottom: 15px;
