@@ -265,8 +265,12 @@ h3 {
         flex-direction: column;
     }
     
-    #rss-feed {
+    #blog-posts {
         order: -1;
+        margin-bottom: 40px;
+    }
+    
+    #rss-feed {
         margin-bottom: 40px;
     }
 }
