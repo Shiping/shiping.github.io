@@ -1,17 +1,10 @@
-/* Gradient Animation */
+/* Base Effects */
 @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Fade In Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -23,31 +16,164 @@
   }
 }
 
-/* Text Glow Animation */
+/* Enhanced Text Effects */
 @keyframes textGlow {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
+    text-shadow: 0 0 10px rgba(100, 181, 246, 0.4);
   }
   50% {
-    text-shadow: 0 0 20px rgba(100, 181, 246, 0.8);
+    text-shadow: 0 0 20px rgba(100, 181, 246, 0.7);
   }
 }
 
-/* Gradient Border Animation */
+/* Subtle Border Effects */
 @keyframes borderGlow {
   0%, 100% {
-    border-color: rgba(100, 181, 246, 0.5);
+    border-color: rgba(100, 181, 246, 0.4);
   }
   50% {
-    border-color: rgba(100, 181, 246, 0.8);
+    border-color: rgba(100, 181, 246, 0.6);
   }
 }
 
-/* Hover Scale Animation */
+/* Refined Hover Effects */
 .scale-hover {
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
 }
 
 .scale-hover:hover {
   transform: scale(1.02);
+}
+
+/* Enhanced Cursor Trail */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  animation: trailFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Enhanced Click Particles */
+.click-particle {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  animation: particleExpand 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Enhanced Image Effects */
+img:not(.no-effect) {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+img:not(.no-effect):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(100, 181, 246, 0.3);
+}
+
+/* Modern Card Effects */
+.modern-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  transform-origin: center center;
+}
+
+/* Basic Clock Styles */
+.clock-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clock .time {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.clock .date {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 3px;
+}
+
+/* Animation Keyframes */
+@keyframes trailFade {
+  0% {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotate(20deg);
+  }
+}
+
+@keyframes particleExpand {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2) rotate(45deg);
+  }
+}
+
+/* Card Content Animation */
+.modern-card > * {
+  transition: transform 0.3s ease;
+}
+
+.modern-card:hover > * {
+  transform: translateZ(20px);
+}
+
+/* Link Hover Effects */
+a:not(.no-effect) {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:not(.no-effect)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  opacity: 0.5;
+}
+
+a:not(.no-effect):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

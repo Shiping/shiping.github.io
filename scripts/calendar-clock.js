@@ -1,4 +1,4 @@
-// Simple clock component
+// Simple clock component with smooth animation
 function initClock() {
     const container = document.querySelector('.clock-container');
     if (!container) return;
@@ -11,9 +11,12 @@ function initClock() {
         </div>
     `;
 
-    // Initialize clock
-    updateClock();
-    setInterval(updateClock, 1000);
+    // Initialize clock with smooth animation
+    function animate() {
+        updateClock();
+        requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
 }
 
 function updateClock() {
@@ -30,7 +33,7 @@ function updateClock() {
     }
 }
 
-// Initialize when DOM is loaded
+// Initialize clock
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     initClock();
 } else {
