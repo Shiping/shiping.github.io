@@ -387,6 +387,16 @@ h3 {
     color: var(--text-secondary);
 }
 
+.clock .lunar-date {
+    display: block;
+    color: #FF9800;
+    font-size: 0.9em;
+    margin-top: 8px;
+    opacity: 0.9;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
 /* Footer Styles */
 footer {
     background: var(--secondary-bg);
