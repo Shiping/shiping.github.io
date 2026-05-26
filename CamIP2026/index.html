@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CamIP2026</title>
+  <meta name="description" content="CamIP2026 turns your iPhone into a private wireless IP camera for local-network streaming, snapshots, and OpenCV workflows.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b1220;
+      --panel: #111c31;
+      --text: #eef6ff;
+      --muted: #9fb4c7;
+      --accent: #66e7ff;
+      --line: rgba(255,255,255,.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 20% 15%, #167987 0, transparent 34%), linear-gradient(135deg, #08111f, #173d82);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 24px;
+      align-items: center;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+    }
+    img {
+      width: 128px;
+      height: 128px;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(36px, 8vw, 64px);
+      line-height: 1;
+    }
+    p { color: var(--muted); font-size: 18px; }
+    a { color: var(--accent); }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      padding: 32px 0 0;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; }
+      img { width: 104px; height: 104px; border-radius: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero">
+      <img src="app-icon.png" alt="CamIP2026 app icon">
+      <div>
+        <h1>CamIP2026</h1>
+        <p>Turn your iPhone into a private wireless IP camera for real-time local-network viewing, snapshots, and OpenCV workflows.</p>
+        <div class="links">
+          <a class="button" href="support.html">Support</a>
+          <a class="button" href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2>What It Does</h2>
+      <ul>
+        <li>Streams MJPEG video over HTTP on your local network.</li>
+        <li>Provides snapshot capture and a browser control page.</li>
+        <li>Supports front/rear camera switching and multiple resolutions.</li>
+        <li>Works with browsers, scripts, Python, and OpenCV.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Local First</h2>
+      <p>CamIP2026 does not require an account or a developer-operated cloud service. Your device serves the stream directly to clients on the same trusted network.</p>
+    </section>
+
+    <footer>
+      Copyright 2026 Shiping Liu
+    </footer>
+  </main>
+</body>
+</html>
